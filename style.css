@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100svh;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#clock {
+    height: 40vw;
+    aspect-ratio: 1;
+    background: #fff;
+    border: 1vw solid black;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 2vw 4vw -1vw rgba(0,0,0,0.8);
+}
+
+#dot{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    width:2vw;
+    aspect-ratio: 1;
+    background: #ccc;
+    box-shadow: 0 2px 4px -1px black;
+    z-index: 999;
+    border-radius: 50%;
+}
+
+.stick {
+    --width: 1vw;
+    position: absolute;
+    background: #000;
+    width: var(--width);
+    height: var(--height);
+    top: calc(50% - var(--height));
+    left: calc(50% - var(--width) / 2);
+    transform-origin: bottom center;
+}
+
+#hourStick {
+    --width: 1vw;
+    --height: 8.5vw;
+}
+
+#minuteStick {
+    --width: 0.9vw;
+    --height: 15vw;
+}
+
+#secondStick {
+    background: red;
+    --width: 0.25vw;
+    --height: 12.5vw;
+}
+
+.numbers {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    font-size: 3vw;
+}
+
+.numbers li {
+    position: absolute;
+    height: 100%;
+    padding: 3.4vw;
+    top: 0;
+}
+
+.hour-marks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+
+.hour-marks li {
+    position: absolute;
+    height: 100%;
+    top: 0;
+}
+
+.hour-marks .mark{
+    background: #000;
+    width: 0.15vw;
+    height: 1.25vw;
+    margin-top: 1.25vw;
+}
+
+.stick5 {
+    width: 0.35vw !important;
+    height: 2.15vw !important;
+}
+
+#day {
+    position: absolute;
+    left: 50%;
+    width: 10vw;
+    border: 2.5px solid #000;
+    height: 2.5vw;
+    transform: translate(-50%, 7.5vw);
+    text-align: center;
+    line-height: 2.5vw;
+    font-size: 1.2vw;
+}
+
+
+
+@media (max-width : 915px) {
+    #clock {
+        width: 90vw;
+        height: 90vw;
+        border: 2.5vw solid #000;
+    }
+
+    #dot {
+        width: 6vw;
+        height: 6vw;
+    }
+
+    #hourStick {
+        --width: 3vw;
+        --height: 18vw;
+    }
+    
+    #minuteStick {
+        --width: 2.5vw;
+        --height: 36vw;
+    }
+    
+    #secondStick {
+        --width: 0.5vw;
+        --height: 32vw;
+    }
+
+    #day {
+        width: 20vw;
+        transform: translate(-50%, 15vw);
+        line-height: 5vw;
+        height: 5vw;
+        font-size: 2.25vw;
+    }
+
+    .hour-marks .mark{
+        width: 0.2vw;
+        height: 2vw;
+        margin-top: 2.25vw;
+    }
+
+    .stick5 {
+        width: 0.5vw !important;
+        height: 3.5vw !important;
+    }
+
+    .numbers {
+        font-size: 6vw;
+    }
+
+    .numbers li {
+        padding: 5.5vw;
+    }
+}
